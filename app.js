@@ -14,7 +14,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://kingdom-stack.vercel.app"
+        ? "https://tech-fest-black.vercel.app"
         : "http://localhost:3001",
   }),
 );
