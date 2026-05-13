@@ -4,12 +4,8 @@ const jwt = require("jsonwebtoken");
 const User = require("./../model/userModel");
 const catchAsync = require("./../utils/catchAsync");
 const AppError = require("./../utils/AppError");
-// const Email = require("./../utils/email");
-
-console.log(process.env.JWT_SECRET, process.env.JWT_COOKIE_EXPIRES_IN);
 
 const signToken = (id) => {
-  console.log({ id });
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
@@ -101,7 +97,12 @@ exports.protect = catchAsync(async (req, res, next) => {
     );
   }
 
+  // try {
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  // } catch (err) {
+  //   console.log(token, process.env.JWT_SECRET);
+  //   console.log(err);
+  // }
 
   const currentUser = await User.findById(decoded.id);
   if (!currentUser) {
