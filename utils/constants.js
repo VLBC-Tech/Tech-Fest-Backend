@@ -1,3 +1,24 @@
+// `
+// Hackathon Registration Successful!
+
+// Welcome to the VLBC Tech Fest 2026 Hackathon 🔥
+// You’re officially part of a generation building Kingdom-centered Solutions through Technology and Innovation.
+
+// Get ready to collaborate, create, solve real Church Challenges, and pitch impactful ideas under the theme:
+
+// Kingdom Stack: Designing Systems That Serve the King
+
+// More details about the Challenge, Team Guidelines, Pitch Format, and Schedule will be shared soon.
+
+// 📍 Stay connected for updates and announcements:
+
+// 📸 Instagram: instagram.com/vlbctechfest
+
+// Kindly engage with our Posts, invite your Team Members, and watch out for exciting updates ahead.
+
+// Let’s build something meaningful for the Kingdom 🚀
+// `;
+
 exports.hackathonTemplate = `<!DOCTYPE html>
 <html>
   <body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f4f6f8;">
@@ -18,17 +39,13 @@ exports.hackathonTemplate = `<!DOCTYPE html>
               <td style="padding:30px; color:#333;">
                 <p>Hi <strong>{{name}}</strong>,</p>
 
-                <p>🔥 You're officially in for the <strong>Kingdom Stack Hackathon</strong>!</p>
+                <p>🔥 Welcome to the VLBC Tech Fest 2026 Hackathon 🔥
+You're officially part of a generation building Kingdom-centered Solutions through Technology and Innovation.</p>
 
-                <p>We're excited to see what you'll build. Here's a quick summary of your registration:</p>
+                <p>Kingdom Stack: Designing Systems That Serve the King More details about the Challenge, Team Guidelines, Pitch Format, and Schedule will be shared soon.</p>
 
-                <ul style="line-height:1.6;">
-                  <li><strong>Skill:</strong> {{skill}}</li>
-                  <li><strong>Stack:</strong> {{stack}}</li>
-                  <li><strong>Years of Experience:</strong> {{yearsOfExperience}}</li>
-                  <li><strong>Url:</strong> {{webUrl}}</li>
-                  <li><strong>Reason:</strong> {{participationIntent}}</li>
-                </ul>
+               <p>📍 Stay connected for updates and announcements:</p>
+               <a href="https://www.instagram.com/vlbctechteam">📸 Instagram: instagram.com/vlbctechfest</a>
 
                 <p>Get ready to collaborate, innovate, and build amazing things 🚀</p>
 
@@ -80,8 +97,8 @@ exports.registrationTemplate = `<!DOCTYPE html>
 
                 <a href="https://www.instagram.com/vlbctechteam">📸 Instagram: instagram.com/vlbctechteam</a>
 
-                <p>Kindly engage with our Posts, share with your Team and Friends, and keep an eye out for more details dropping soon.</p>
-                <p>See you in July🔥</p>
+                <p>Kindly engage with our Posts, invite your Team Members, and watch out for exciting updates ahead.</p>
+                <p>Let's build something meaningful for the Kingdom 🚀</p>
               </td>
             </tr>
 
