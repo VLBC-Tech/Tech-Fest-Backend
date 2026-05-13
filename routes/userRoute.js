@@ -13,12 +13,13 @@ const userModel = require("../model/userModel");
 
 const router = express.Router();
 
-router.route("/").get(getUsers).post(createUser);
+router.post("/", createUser);
 router.post("/login", login);
 router.get("/logout", logout);
 
 router.use(protect);
 
+router.get("/", getUsers);
 router.get("/me", getMe, getUser);
 // router.get("/users", getUsers);
 
