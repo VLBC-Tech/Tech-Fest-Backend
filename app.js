@@ -13,13 +13,25 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    //"*",
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://tech-fest-black.vercel.app"
-        : "http://localhost:3001",
+        ? [
+            "https://tech-fest-black.vercel.app",
+            "https://tech-fest-admin.vercel.app/",
+          ]
+        : ["http://localhost:3001"],
   }),
 );
+
+// app.use(
+//   cors({
+//     //"*",
+//     origin:
+//       process.env.NODE_ENV === "production"
+//         ? "https://tech-fest-black.vercel.app"
+//         : "http://localhost:3001",
+//   }),
+// );
 
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/event", eventRouter);
