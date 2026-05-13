@@ -32,12 +32,6 @@ exports.hackathonTemplate = `<!DOCTYPE html>
 
                 <p>Get ready to collaborate, innovate, and build amazing things 🚀</p>
 
-                <div style="margin:30px 0; text-align:center;">
-                  <a href="#" style="background:#16a34a; color:#fff; padding:12px 20px; text-decoration:none; border-radius:5px;">
-                    Join Event Updates
-                  </a>
-                </div>
-
                 <p>If you have any questions, feel free to reach out.</p>
 
                 <p>Let's build something great! 💡</p>
@@ -78,19 +72,16 @@ exports.registrationTemplate = `<!DOCTYPE html>
               <td style="padding:30px; color:#333;">
                 <p>Hi <strong>{{name}}</strong>,</p>
 
-                <p>You're successfully registered for the <strong>Kingdom Stack Event</strong>.</p>
+                <p>Welcome to VLBC Tech Fest 2026 🚀
+                  We're excited to have you join us for an impactful experience themed:</p>
+                <p><strong>Kingdom Stack: Designing Systems That Serve the King</strong></p>
 
-                <p>We're excited to have you join us! Stay tuned for more updates and details.</p>
+                <p>Get ready for powerful Conversations, Networking, Innovation, Practical Sessions, and Kingdom-driven Tech Experiences alongside Christian Creatives, Media Teams, Sound Engineers, Developers, and Tech Leaders. Stay connected and don't miss important updates, speaker reveals, hackathon details, and exciting announcements:</p>
 
-                <div style="margin:30px 0; text-align:center;">
-                  <a href="#" style="background:#2563eb; color:#fff; padding:12px 20px; text-decoration:none; border-radius:5px;">
-                    View Event Details
-                  </a>
-                </div>
+                <a href="https://www.instagram.com/vlbctechteam">📸 Instagram: instagram.com/vlbctechteam</a>
 
-                <p>If you have any questions, feel free to reach out.</p>
-
-                <p>See you there! 🙌</p>
+                <p>Kindly engage with our Posts, share with your Team and Friends, and keep an eye out for more details dropping soon.</p>
+                <p>See you in July🔥</p>
               </td>
             </tr>
 
