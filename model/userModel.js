@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
   {
@@ -48,6 +49,24 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide your church location"],
     },
+    password: {
+      type: String,
+      // required: [true, "Please provide a password"],
+      minlength: 8,
+      select: false,
+      default: null,
+    },
+    passwordConfirm: {
+      type: String,
+      // required: [true, "Please confirm your password"],
+      validate: {
+        validator: function (el) {
+          return el === this.password;
+        },
+        message: "Passwords are not the same!",
+      },
+      default: null,
+    },
     // experienceLevel: {
     //   type: String,
     //   required: [true, "Please specify your experience level"],
@@ -60,6 +79,26 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
+
+userSchema.methods.correctPassword = async function (
+  candidatePassword,
+  userPassword,
+) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
+
+userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10,
+    );
+
+    return JWTTimestamp < changedTimestamp;
+  }
+
+  return false;
+};
 
 const userModel = mongoose.model("user", userSchema);
 

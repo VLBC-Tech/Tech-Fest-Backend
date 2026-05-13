@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = require("./routes/userRoute");
+const eventRouter = require("./routes/eventRoute");
 const AppError = require("./utils/AppError");
 const globalErrorHandler = require("./controller/errorController");
 const cors = require("cors");
@@ -12,6 +13,7 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
+    //"*",
     origin:
       process.env.NODE_ENV === "production"
         ? "https://tech-fest-black.vercel.app"
@@ -20,6 +22,7 @@ app.use(
 );
 
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/event", eventRouter);
 
 app.all("/*splat", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

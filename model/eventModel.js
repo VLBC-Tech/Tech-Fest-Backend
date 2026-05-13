@@ -27,7 +27,7 @@ const eventSchema = new mongoose.Schema(
     webUrl: {
       type: String,
       default: null,
-      //   required: [true, "Please provide your years of experience"],
+      required: [true, "Please provide your a valid url"],
     },
     participationIntent: {
       type: String,
@@ -38,6 +38,10 @@ const eventSchema = new mongoose.Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
       required: true,
+    },
+    approved: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true },

@@ -7,6 +7,8 @@ const {
   registrationTemplate,
 } = require("../utils/constants");
 
+const { getOne, getAll } = require("./handlerFactory");
+
 exports.createUser = catchAsync(async (req, res) => {
   const {
     fullName,
@@ -57,7 +59,7 @@ exports.createUser = catchAsync(async (req, res) => {
       participantId: user._id,
     });
 
-    console.log(user, eventData);
+    // console.log(user, eventData);
 
     await sendEmail({
       email: user.email,
@@ -77,3 +79,11 @@ exports.createUser = catchAsync(async (req, res) => {
     message: "Registration complete. Please check your email.",
   });
 });
+
+exports.getMe = (req, res, next) => {
+  req.params.id = req.user.id;
+  next();
+};
+
+exports.getUser = getOne(User);
+exports.getUsers = getAll(User);
