@@ -67,6 +67,16 @@ const userSchema = new mongoose.Schema(
       },
       default: null,
     },
+    certificateType: {
+      type: String,
+      enum: ["e-copy", "printout"],
+      default: null,
+    },
+    attendanceType: {
+      type: String,
+      enum: ["virtual", "physical"],
+      default: "physical",
+    },
     // experienceLevel: {
     //   type: String,
     //   required: [true, "Please specify your experience level"],

@@ -1,24 +1,3 @@
-// `
-// Hackathon Registration Successful!
-
-// Welcome to the VLBC Tech Fest 2026 Hackathon 🔥
-// You’re officially part of a generation building Kingdom-centered Solutions through Technology and Innovation.
-
-// Get ready to collaborate, create, solve real Church Challenges, and pitch impactful ideas under the theme:
-
-// Kingdom Stack: Designing Systems That Serve the King
-
-// More details about the Challenge, Team Guidelines, Pitch Format, and Schedule will be shared soon.
-
-// 📍 Stay connected for updates and announcements:
-
-// 📸 Instagram: instagram.com/vlbctechfest
-
-// Kindly engage with our Posts, invite your Team Members, and watch out for exciting updates ahead.
-
-// Let’s build something meaningful for the Kingdom 🚀
-// `;
-
 exports.hackathonTemplate = `<!DOCTYPE html>
 <html>
   <body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color:#f4f6f8;">
