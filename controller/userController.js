@@ -1,7 +1,7 @@
 const User = require("../model/userModel");
 const Event = require("../model/eventModel");
 const catchAsync = require("../utils/catchAsync");
-const sendEmail = require("../utils/email");
+// const sendEmail = require("../utils/email");
 const {
   hackathonTemplate,
   registrationTemplate,
