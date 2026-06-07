@@ -42,15 +42,16 @@ exports.createUser = catchAsync(async (req, res) => {
     branchName,
     churchUnit,
     location,
+    receivedEmail: false,
   });
 
   // console.log(user)
 
-  await sendEmail({
-    email: user.email,
-    subject: "Registration Confirmed",
-    html: registrationTemplate.replace("{{name}}", user.fullName),
-  });
+  // await sendEmail({
+  //   email: user.email,
+  //   subject: "Registration Confirmed",
+  //   html: registrationTemplate.replace("{{name}}", user.fullName),
+  // });
 
   if (skill) {
     const eventData = await Event.create({
@@ -65,22 +66,23 @@ exports.createUser = catchAsync(async (req, res) => {
 
     // console.log(user, eventData);
 
-    await sendEmail({
-      email: user.email,
-      subject: "Hackathon Registration Confirmed",
-      html: hackathonTemplate
-        .replace("{{name}}", user.fullName)
-        .replace("{{skill}}", eventData.skill)
-        .replace("{{stack}}", eventData.stack)
-        .replace("{{yearsOfExperience}}", eventData.yearsOfExperience)
-        .replace("{{webUrl}}", eventData.webUrl)
-        .replace("{{participationIntent}}", eventData.participationIntent),
-    });
+    // await sendEmail({
+    //   email: user.email,
+    //   subject: "Hackathon Registration Confirmed",
+    //   html: hackathonTemplate
+    //     .replace("{{name}}", user.fullName)
+    //     .replace("{{skill}}", eventData.skill)
+    //     .replace("{{stack}}", eventData.stack)
+    //     .replace("{{yearsOfExperience}}", eventData.yearsOfExperience)
+    //     .replace("{{webUrl}}", eventData.webUrl)
+    //     .replace("{{participationIntent}}", eventData.participationIntent),
+    // });
   }
 
   res.status(201).json({
     status: "success",
-    message: "Registration complete. Please check your email.",
+    message: "Registration complete. You'll receive an email shortly.",
+    // message: "Registration complete. Please check your email.",
   });
 });
 

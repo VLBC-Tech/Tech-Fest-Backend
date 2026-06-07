@@ -77,6 +77,10 @@ const userSchema = new mongoose.Schema(
       enum: ["virtual", "physical"],
       default: "physical",
     },
+    receivedEmail: {
+      type: Boolean,
+      default: true,
+    },
     // experienceLevel: {
     //   type: String,
     //   required: [true, "Please specify your experience level"],

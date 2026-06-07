@@ -11,21 +11,47 @@
 //   },
 // });
 
-const sgMail = require("@sendgrid/mail");
+// const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+// const sendEmail = async (options) => {
+//   try {
+//     const msg = {
+//       to: options.email,
+//       from: process.env.EMAIL_FROM, // must be verified
+//       subject: options.subject,
+//       //   text: options.message,
+//       html: options.html, // optional
+//     };
+
+//     await sgMail.send(msg);
+//   } catch (err) {
+//     throw err;
+//   }
+// };
+
+// module.exports = sendEmail;
+
+const { Resend } = require("resend");
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async (options) => {
   try {
-    const msg = {
+    const { data, error } = await resend.emails.send({
+      from: process.env.EMAIL_FROM,
       to: options.email,
-      from: process.env.EMAIL_FROM, // must be verified
       subject: options.subject,
-      //   text: options.message,
-      html: options.html, // optional
-    };
+      html: options.html,
+    });
 
-    await sgMail.send(msg);
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return data;
   } catch (err) {
     throw err;
   }
