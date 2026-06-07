@@ -34,27 +34,27 @@
 
 // module.exports = sendEmail;
 
-const { Resend } = require("resend");
+// const { Resend } = require("resend");
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
-const sendEmail = async (options) => {
-  try {
-    const { data, error } = await resend.emails.send({
-      from: process.env.EMAIL_FROM,
-      to: options.email,
-      subject: options.subject,
-      html: options.html,
-    });
+// const sendEmail = async (options) => {
+//   try {
+//     const { data, error } = await resend.emails.send({
+//       from: process.env.EMAIL_FROM,
+//       to: options.email,
+//       subject: options.subject,
+//       html: options.html,
+//     });
 
-    if (error) {
-      throw new Error(error.message);
-    }
+//     if (error) {
+//       throw new Error(error.message);
+//     }
 
-    return data;
-  } catch (err) {
-    throw err;
-  }
-};
+//     return data;
+//   } catch (err) {
+//     throw err;
+//   }
+// };
 
-module.exports = sendEmail;
+// module.exports = sendEmail;
